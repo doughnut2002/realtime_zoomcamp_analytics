@@ -17,7 +17,7 @@ services:
     volumes:
       - shared-workspace:/opt/workspace
     env_file:
-      - ./docker/env
+      - .env
 
   spark-master:
     image: spark-master
@@ -30,7 +30,7 @@ services:
     volumes:
       - shared-workspace:/opt/workspace
     env_file:
-      - ./docker/env
+      - .env
 
   spark-worker-1:
     image: spark-worker
@@ -45,7 +45,7 @@ services:
     depends_on:
       - spark-master
     env_file:
-      - ./docker/env  
+      - .env  
   spark-worker-2:
     image: spark-worker
     container_name: ${PROJECT_NAME}-spark-worker-2
@@ -59,4 +59,4 @@ services:
     depends_on:
       - spark-master
     env_file:
-      - ./docker/env  
+      - .env  

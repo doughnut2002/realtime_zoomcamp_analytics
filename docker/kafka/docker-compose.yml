@@ -31,7 +31,7 @@ services:
       - zookeeper
       - broker
     ports:
-      - "{SCHEMA_REGISTRY_PORT}:8081"
+      - "${SCHEMA_REGISTRY_PORT}:8081"
     environment:
       # SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "zookeeper:2181" #(depreciated)
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: ${SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS}

@@ -11,4 +11,4 @@ services:
       ports:
         - ${METABASE_PORT}:3000
       env_file:
-      - ./docker/env  
+      - .env  
