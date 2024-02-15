@@ -19,7 +19,7 @@ def export_data_to_google_cloud_storage(df: DataFrame, **kwargs) -> None:
     config_path = path.join(get_repo_path(), 'io_config.yaml')
     config_profile = 'default'
 
-    bucket_name = 'de-zoomcamp-project-data'
+    bucket_name = 'shekhar-iq-bucket'
     object_key = 'data/time_spent.parquet'
 
     GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).export(
