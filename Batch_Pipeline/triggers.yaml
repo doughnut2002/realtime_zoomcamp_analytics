@@ -1,0 +1,12 @@
+triggers:
+- envs: []
+  last_enabled_at: 2024-02-16 08:58:12.699122
+  name: shekhar-iq-trigger
+  pipeline_uuid: kind_voice
+  schedule_interval: null
+  schedule_type: api
+  settings: null
+  sla: null
+  start_time: 2024-02-16 08:56:00
+  status: active
+  variables: {}

@@ -1,0 +1,153 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/load_api2.py
+  downstream_blocks:
+  - expo_2
+  - api_to_gcs_2
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_api2
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_api2
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_exporters/api_to_gcs_2.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: api_to_gcs_2
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_api2
+  uuid: api_to_gcs_2
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: default
+    data_provider_schema: de_schema
+    data_provider_table: time_spent
+    dbt: {}
+    disable_query_preprocessing: false
+    export_write_policy: replace
+    file_source:
+      path: data_exporters/expo_2.sql
+    limit: 0
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: expo_2
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_api2
+  uuid: expo_2
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_loaders/load_titanic.py
+  downstream_blocks:
+  - export_to_postgres
+  - api_to_gcs_1
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: load_titanic
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: load_titanic
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: data_exporters/api_to_gcs_1.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: api_to_gcs_1
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_titanic
+  uuid: api_to_gcs_1
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    data_provider: postgres
+    data_provider_profile: default
+    data_provider_schema: de_schema
+    data_provider_table: scores
+    dbt: {}
+    disable_query_preprocessing: false
+    export_write_policy: replace
+    file_source:
+      path: data_exporters/export_to_postgres.sql
+    limit: 0
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: sql
+  name: export_to_postgres
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - load_titanic
+  uuid: export_to_postgres
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-02-16 08:41:44.932423+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: kind voice
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: kind_voice
+variables_dir: /home/src/mage_data/Shekhar-IQ
+widgets: []
