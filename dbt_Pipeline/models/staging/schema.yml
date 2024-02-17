@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+ - name: staging
+   database: gothic-sylph-387906
+   schema: de_data
+
+   tables: 
+     - name: yellow_taxi_data
+     - name: green_taxi_data
