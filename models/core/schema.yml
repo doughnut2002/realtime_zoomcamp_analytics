@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_module_dbt_model
+  - name: dim_module
     description: >
       This table contains dimensions of the modules available in the course curriculum. Each record represents a unique module.
     columns:
@@ -18,7 +18,7 @@ models:
         description: >
           An array containing the IDs of the instructors associated with the module.
 
-  - name: dim_user_dbt_model
+  - name: dim_user
     description: >
       This table contains dimensions of the users enrolled in the course. Each record represents a unique user.
     columns:
@@ -35,7 +35,7 @@ models:
         description: >
           The type of user, either "student" or "instructor".
         
-  - name: fact_scores_dbt_model
+  - name: fact_score
     description: >
       This fact table contains scores achieved by users in different modules. Each record represents a user's score for a specific module.
     columns:
@@ -52,7 +52,7 @@ models:
         description: >
           The score achieved by the user for the corresponding module.
  
-  - name: fact_time_dbt_model
+  - name: fact_time_spent
     description: >
       This fact table contains time spent by users on different modules. Each record represents the time spent by a user on a specific module.
     columns:
