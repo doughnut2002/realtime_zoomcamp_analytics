@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'shekhar-iq-project'
+name: 'shekhar_iq_project'
 version: '1.0.0'
 config-version: 2
 
@@ -42,7 +42,7 @@ models:
       +materialized: table
 
 seeds:
-  shekhar-iq-project:
+  shekhar_iq_project:
     time_spent:
       +column_types:
         email: string
