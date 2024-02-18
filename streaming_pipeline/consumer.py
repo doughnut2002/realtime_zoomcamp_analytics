@@ -2,7 +2,7 @@
 from confluent_kafka import Consumer, KafkaError
 
 # Kafka consumer configuration
-conf = {'bootstrap.servers': "localhost:9092", 'group.id': "ashraf.de-zoomcamp-form-data", 'auto.offset.reset': 'earliest'}
+conf = {'bootstrap.servers': "localhost:9092", 'group.id': "shekhar.de-zoomcamp-form-data", 'auto.offset.reset': 'earliest'}
 consumer = Consumer(conf)
 
 # Subscribe to the Kafka topic
