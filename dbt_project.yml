@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'shekhar-iq-project'
 version: '1.0.0'
 config-version: 2
 
@@ -36,7 +36,55 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  my_new_project:
+  shekhar-iq-project:
     # Applies to all files under models/example/
     core:
       +materialized: table
+
+seeds:
+  shekhar-iq-project:
+    time_spent:
+      +column_types:
+        email: string
+        time_homework: float
+        time_lectures: float
+        module: string
+        time_homework_homework-01b: float
+        time_lectures_homework-01b: float
+        module_homework-01b: string
+        time_homework_homework-02: float
+        time_lectures_homework-02: float
+        module_homework-02: string
+        time_homework_homework-03: float
+        time_lectures_homework-03: float
+        module_homework-03: string
+        time_homework_homework-04: float
+        time_lectures_homework-04: float
+        module_homework-04: string
+        time_homework_homework-05: float
+        time_lectures_homework-05: float
+        module_homework-05: string
+        time_homework_homework-06: float
+        time_homework_homework-piperider: float
+        module_homework-piperider: string
+        time_evaluate: float
+        module_project-01-eval: string
+        time_project: float
+        module_project-01-submissions: string
+        time_evaluate_project-02-eval: float
+        module_project-02-eval: string
+        time_project_project-02-submissions: float
+        module_project-02-submissions: string
+    scores:
+      +column_types:
+        hw-01a: float
+        hw-01b: float
+        hw-02: float
+        hw-03: float
+        hw-04: float
+        hw-05: float
+        hw-06: float
+        hw-piperider: float
+        project-01: float
+        project-02: float
+        total: float
