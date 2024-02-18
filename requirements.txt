@@ -1,2 +1,4 @@
 pyspark
 lxml
+flask
+confluent_kafka
