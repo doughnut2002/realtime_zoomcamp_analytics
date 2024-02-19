@@ -29,8 +29,12 @@ def submit():
     
     # Create a key-value pair message
     key = f"{module_id}-{email}"
+    
     # value = f"Module_Name: {module_name}, Module_ID: {module_id}, Email: {email}, Time Spent on Homework: {time_spent_homework}, Time Spent on Lectures: {time_spent_lectures}, Scores: {scores}"
-    value = {'module_name': {module_name}, 'module_id': {module_id}, 'email':email, 'time_homework':time_spent_homework,'time_lectures':time_spent_lectures}
+    value = {'module_name': module_name, 'module_id': module_id, 'email':email, 'time_homework':time_spent_homework,'time_lectures':time_spent_lectures,'scores':scores}
+    
+    # value = {'module_name': module_name, 'module_id': module_id , 'email': email, 'time_homework': time_homework, 'time_lectures': time_lectures }
+   
     # Produce the message to a Kafka topic
     produce_message('shekhar-iq-form-submissions', key, value)
 
