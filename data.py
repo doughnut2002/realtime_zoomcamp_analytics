@@ -43,6 +43,7 @@ else:
     print("Failed to fetch file names. Status code:", response.status_code)
     
  # Write the final combined data to a CSV file
+combined_data['user_id']=combined_data.reset_index(drop=True).index + 1
 combined_data.to_csv('data/time_spent.csv', index=False)
 
 
@@ -54,6 +55,7 @@ tables = pd.read_html(url,header=0,skiprows=1)
 
 # Assuming 'leaderboard' is the first table extracted
 leaderboard_df = tables[-1]
+leaderboard_df['user_id']=leaderboard_df.reset_index(drop=True).index + 1
 
 leaderboard_df.drop(columns=['1'],inplace=True)
 # Preview the data
