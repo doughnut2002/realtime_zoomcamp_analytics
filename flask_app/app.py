@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import sys
 import os
+from add_to_db import insert_into_database
+
 
 # Add the directory containing producer.py to the Python path
 sys.path.append("./streaming_pipeline")
@@ -34,6 +36,8 @@ def submit():
     value = {'module_name': module_name, 'module_id': module_id, 'email':email, 'time_homework':time_spent_homework,'time_lectures':time_spent_lectures,'scores':scores}
     
     # value = {'module_name': module_name, 'module_id': module_id , 'email': email, 'time_homework': time_homework, 'time_lectures': time_lectures }
+    # Insert form data into PostgreSQL database
+    insert_into_database(module_name, module_id, email, time_spent_homework, time_spent_lectures, scores)
    
     # Produce the message to a Kafka topic
     produce_message('shekhar-iq-form-submissions', key, value)

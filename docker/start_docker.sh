@@ -16,14 +16,15 @@ echo "Starting Metabase container"
 docker-compose -f ./docker/metabase/docker-compose.yml up -d
 echo "  "
 
-echo "Starting Kafka related containers"
-docker-compose -f ./docker/kafka/docker-compose.yml up -d
-echo "  "
-
 echo "Starting Spark related containers"
 chmod +x ./docker/spark/sparkdocker/build.sh
 ./docker/spark/sparkdocker/build.sh
 echo "  "
+
+echo "Starting Kafka related containers"
+docker-compose -f ./docker/kafka/docker-compose.yml up -d
+echo "  "
+
 docker-compose -f ./docker/spark/sparkdocker/docker-compose.yml up -d
 echo "  "
 

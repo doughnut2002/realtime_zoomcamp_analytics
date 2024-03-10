@@ -2,3 +2,4 @@ pyspark
 lxml
 flask
 confluent_kafka
+psycopg2
